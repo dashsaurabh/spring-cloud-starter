@@ -31,3 +31,41 @@ class MessageController{
 	}
 
 }
+
+@RestController
+class ProductController{
+
+	@GetMapping(value = "/products")
+	public Product getProduct(){
+		return new Product("Laptop", "The best laptop in the world");
+	}
+
+}
+
+class Product{
+
+	String productName;
+
+	String productDescription;
+
+	public Product(String productName, String productDescription) {
+		this.productName = productName;
+		this.productDescription = productDescription;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+}
